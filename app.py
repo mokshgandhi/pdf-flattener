@@ -74,7 +74,9 @@ if uploaded_file is not None:
             # Convert PDF → JPGs
             image_paths = pdf_to_images(working_pdf, tmpdir)
             # Merge JPGs → Flattened PDF
-            output_pdf = os.path.join(tmpdir, "flattened.pdf")
+            base_name = os.path.splitext(uploaded_file.name)[0]  # e.g. "invoice"
+            output_pdf = os.path.join(tmpdir, f"{base_name}_flattened.pdf")
+
             images_to_pdf(image_paths, output_pdf)
 
         st.success("✅ File flattened successfully!")
@@ -83,9 +85,9 @@ if uploaded_file is not None:
             st.download_button(
                 label="⬇️ Download Flattened PDF",
                 data=f,
-                file_name="flattened.pdf",
+                file_name=f"{base_name}_flattened.pdf",
                 mime="application/pdf"
             )
 
 st.markdown("---")
-st.caption("© 2025 Document Flattener | Built by Moksh ")
+st.caption("© 2025 Report Flattener | Built by Moksh ")
