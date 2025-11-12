@@ -85,7 +85,7 @@ if uploaded_file is not None:
             st.download_button(
                 label="⬇️ Download Flattened PDF",
                 data=f,
-                file_name=f"{base_name}_flattened.pdf",
+                file_name=f"{base_name}_print.pdf",
                 mime="application/pdf"
             )
 
