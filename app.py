@@ -43,7 +43,7 @@ def images_to_pdf(image_paths, output_pdf):
 
 st.set_page_config(page_title="PDF & DOCX Flattener", page_icon="📄", layout="centered")
 
-st.title("📄 Document Flattener")
+st.title("Document Flattener")
 st.write(
     """
     Upload a **.pdf** or **.docx** file to flatten it into a non-selectable image-based PDF.  
